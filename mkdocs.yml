@@ -1,0 +1,10 @@
+site_name: KOReader compendium
+site_author: Dmitri Popov
+repo_url: https://github.com/dmpop/koreader-compendium/
+copyright: CC0
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
