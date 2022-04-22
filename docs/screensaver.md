@@ -4,6 +4,6 @@ While an e-ink display doesn't require a screensaver, it won't hurt to replace t
 
 ![](img/screensaver-message.png)
 
-1. Open the top bar, choose **Settings → Screen → Screensaver**, and enable **Use last book's cover as screensaver**.
-2. Enable **Add message to screensaver**, then choose **Settings → Screensaver message**.
+1. Open the top bar, choose **Settings -> Screen -> Screensaver**, and enable **Use last book's cover as screensaver**.
+2. Enable **Add message to screensaver**, then choose **Settings -> Screensaver message**.
 3. Specify the _Page %c of %t_ message to show the current and total page count.

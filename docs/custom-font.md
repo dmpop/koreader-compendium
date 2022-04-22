@@ -1,7 +1,7 @@
 # Add custom fonts
 
 1. Copy a folder with _.ttf_ files to _koreader/fonts_.
-2. In KOReader, open the top bar and choose **Document → Font**.
+2. In KOReader, open the top bar and choose **Document -> Font**.
 
 ![](img/font.png)
 
