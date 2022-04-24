@@ -1,6 +1,6 @@
-# Set book cover as screensaver
+# Set current book cover as screensaver
 
-While an e-ink display doesn't require a screensaver, it won't hurt to replace the plain **Sleeping** message with something more informative. Something like the cover of the current book along with the reading progress.
+While an e-ink display doesn't require a screensaver, there is nothing wrong with replacing the plain **Sleeping** message with something more informative. Something like the cover of the current book along with the reading progress.
 
 ![](img/screensaver-message.png)
 
