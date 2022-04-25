@@ -474,8 +474,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../15-resources/" class="md-nav__link">
-        Useful Kobo and KOReader resources
+      <a href="../15-ssh/" class="md-nav__link">
+        Connect to the ereader via SSH
       </a>
     </li>
   
@@ -489,8 +489,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh/" class="md-nav__link">
-        Connect to the ereader via SSH
+      <a href="../16-resources/" class="md-nav__link">
+        Useful Kobo and KOReader resources
       </a>
     </li>
   
@@ -549,33 +549,33 @@
 
 <h1 id="back-up-koreader-book-metadata-with-rsync">Back up KOReader book metadata with rsync</h1>
 <p>For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your ereader. For example, I have the <em>Library</em> directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:</p>
-<div class="highlight"><pre><span></span><code>Library
-  English
-  Italiano
-  Dansk
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Library
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  English
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Italiano
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Dansk
 </code></pre></div>
 <p>This way, I can back up everything by syncing the <em>Library</em> directory and its entire contents using rsync. There are two ways to do that.</p>
 <p>The simplest approach is to connect the ereader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in <em>/media/$USER/KOBOeReader</em>. Then it's a matter of running the appropriate rsync command. For example:</p>
-<div class="highlight"><pre><span></span><code>rsync -avh --delete /media/$USER/KOBOeReader/Library/ /path/to/backup/dir
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync -avh --delete /media/<span class="nv">$USER</span>/KOBOeReader/Library/ /path/to/backup/dir
 </code></pre></div>
 <p>Instead of backing up the data to the local machine, you can push the data to a remote Linux machine via SSH:</p>
-<div class="highlight"><pre><span></span><code>rsync -avhz --delete -P -e &quot;ssh -p 22&quot; /media/$USER/KOBOreader/Library/ user@127.0.0.1:/path/to/backup/dir
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /media/<span class="nv">$USER</span>/KOBOreader/Library/ user@127.0.0.1:/path/to/backup/dir
 </code></pre></div>
 <p>That's all fine and dandy, but you need a machine with rsync for this approach to work.</p>
 <p>A slightly more technical but versatile approach is to install rsync on your reader, so you can run backup operations directly on the device itself. To install rsync on a Kobo device, download and install <a href="https://www.mobileread.com/forums/showthread.php?t=254214">Kobo Stuff</a>. Launch KOReader, open the top bar, switch to <strong>Tools -&gt; More tools -&gt; Terminal emulator</strong>, and tap <strong>Open terminal session</strong>. Run the rsync command that syncs the content of the <em>Library</em> directory to a Linux machine. Here's the command I use to back up the data to a Linux server running on my local network:</p>
-<div class="highlight"><pre><span></span><code>rsync -avhz --delete -P -e &quot;ssh -p 22&quot; /mnt/onboard/Library/ user@127.0.0.1:/path/to/library
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/Library/ user@127.0.0.1:/path/to/library
 </code></pre></div>
 <p>Instead of laboriously entering long rsync commands using the built-in keyboard, you can speed up the process by adding the desired commands to the <em>koreader/.ash_history</em> file. Alternatively, you can write a shell script to automate the task. Create a text file named <em>up.sh</em> in the <em>koreader/scripts/</em> and add the following code (adjust the examples as needed):</p>
-<div class="highlight"><pre><span></span><code>#!/bin/sh
-rsync -avhz --delete -P -e &quot;ssh -p 22&quot; /mnt/onboard/Library/ USER@127.0.0.1:/path/to/library
-rsync -avhz --delete -P -e &quot;ssh -p 22&quot; /mnt/onboard/.adds/koreader/clipboard/ USER@127.0.0.1:/path/to/export
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/Library/ USER@127.0.0.1:/path/to/library
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/.adds/koreader/clipboard/ USER@127.0.0.1:/path/to/export
 </code></pre></div>
 <p>Save the file and make it executable using the <code>chmod +x /koreader/scripts/up.sh</code> command.</p>
 <p>To launch the script in the ereader, open the terminal emulator and run the <code>/path/to/koreader/scripts/up.sh</code> command.</p>
 <p>If you happen to use a second ereader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/sh
-rsync -avhz --delete --no-g --no-o -P -e &quot;ssh -p 22&quot; USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
-rsync -avhz --delete --no-g --no-o -P -e &quot;ssh -p 22&quot; USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
 </code></pre></div>
 <div class="admonition bug">
 <p class="admonition-title">Sync workaround</p>
@@ -587,7 +587,7 @@ rsync -avhz --delete --no-g --no-o -P -e &quot;ssh -p 22&quot; USER@127.0.0.1:/p
 <p>To generate an SSH key pair, launch the terminal emulator in KOReader and run the <code>ssh-keygen</code> command. Follow the prompts, but skip specifying a passphrase. Run the <code>cat .ssh/*.pub</code> command and copy the key. This generates a key pair in the <em>/usr/local/niluje/usbnet/etc/dot.ssh/</em> directory. To make sure that the keys are there, run the <code>ssh-agent sh -c 'ssh-add; ssh-add -L'</code> command.</p>
 <p>Copy the <em>/usr/local/niluje/usbnet/etc/dot.ssh/id_rsa.pub</em> file to a Linux machine, and use the command below to add it to the 
 <em>authorized_keys</em> file on the remote server:</p>
-<div class="highlight"><pre><span></span><code>cat id_rsa.pub | ssh USER@127.0.0.1 &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat id_rsa.pub <span class="p">|</span> ssh USER@127.0.0.1 <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
 </code></pre></div>
 <p>From now on you can run the shell scripts (or any comands and actions that require an SSH connection to the remote machine) without password.</p>
 
