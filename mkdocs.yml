@@ -13,4 +13,3 @@ markdown_extensions:
   - pymdownx.superfences
 plugins:
   - search
-  - rss
