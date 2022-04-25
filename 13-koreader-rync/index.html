@@ -577,7 +577,7 @@ rsync -avhz --delete -P -e &quot;ssh -p 22&quot; /mnt/onboard/.adds/koreader/cli
 rsync -avhz --delete --no-g --no-o -P -e &quot;ssh -p 22&quot; USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
 rsync -avhz --delete --no-g --no-o -P -e &quot;ssh -p 22&quot; USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
 </code></pre></div>
-<div class="admonition tip">
+<div class="admonition bug">
 <p class="admonition-title">Sync workaround</p>
 <p>Running the described rsync-based shell script to download KOReader data doesn't affect the currently opened book. A simple workaround is to open a book that you are not reading and then run the script. I usually open the <em>KOreader Quickstart Guide</em> book, and then run the script.</p>
 </div>
