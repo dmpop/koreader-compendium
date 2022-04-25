@@ -1,4 +1,4 @@
-## Access Calibre library via OPDS
+# Access Calibre library via OPDS
 
 ![](img/opds.png)
 

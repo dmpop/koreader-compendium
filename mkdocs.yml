@@ -4,9 +4,11 @@ site_url: https://tokyoma.de/koreader-compendium/
 site_author: Dmitri Popov
 repo_url: https://github.com/dmpop/koreader-compendium/
 edit_uri: blob/main/docs/
-copyright: CC0
+copyright: Creative Commons CC0
 theme:
   name: material
+  font:
+    text: Barlow
 markdown_extensions:
   - admonition
   - pymdownx.details
