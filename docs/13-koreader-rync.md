@@ -13,13 +13,13 @@ This way, I can back up everything by syncing the _Library_ directory and its en
 
 The simplest approach is to connect the ereader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in _/media/$USER/KOBOeReader_. Then it's a matter of running the appropriate rsync command. For example:
 
-```
+```bash
 rsync -avh --delete /media/$USER/KOBOeReader/Library/ /path/to/backup/dir
 ```
 
 Instead of backing up the data to the local machine, you can push the data to a remote Linux machine via SSH:
 
-```
+```bash
 rsync -avhz --delete -P -e "ssh -p 22" /media/$USER/KOBOreader/Library/ user@127.0.0.1:/path/to/backup/dir
 ```
 
@@ -27,13 +27,13 @@ That's all fine and dandy, but you need a machine with rsync for this approach t
 
 A slightly more technical but versatile approach is to install rsync on your reader, so you can run backup operations directly on the device itself. To install rsync on a Kobo device, download and install [Kobo Stuff](https://www.mobileread.com/forums/showthread.php?t=254214). Launch KOReader, open the top bar, switch to **Tools -> More tools -> Terminal emulator**, and tap **Open terminal session**. Run the rsync command that syncs the content of the _Library_ directory to a Linux machine. Here's the command I use to back up the data to a Linux server running on my local network:
 
-```
+```bash
 rsync -avhz --delete -P -e "ssh -p 22" /mnt/onboard/Library/ user@127.0.0.1:/path/to/library
 ```
 
 Instead of laboriously entering long rsync commands using the built-in keyboard, you can speed up the process by adding the desired commands to the _koreader/.ash\_history_ file. Alternatively, you can write a shell script to automate the task. Create a text file named _up.sh_ in the _koreader/scripts/_ and add the following code (adjust the examples as needed):
 
-```
+```bash
 #!/bin/sh
 rsync -avhz --delete -P -e "ssh -p 22" /mnt/onboard/Library/ USER@127.0.0.1:/path/to/library
 rsync -avhz --delete -P -e "ssh -p 22" /mnt/onboard/.adds/koreader/clipboard/ USER@127.0.0.1:/path/to/export
@@ -45,7 +45,7 @@ To launch the script in the ereader, open the terminal emulator and run the `/pa
 
 If you happen to use a second ereader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:
 
-```
+```bash
 #!/bin/sh
 rsync -avhz --delete --no-g --no-o -P -e "ssh -p 22" USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
 rsync -avhz --delete --no-g --no-o -P -e "ssh -p 22" USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
@@ -65,7 +65,7 @@ To generate an SSH key pair, launch the terminal emulator in KOReader and run th
 Copy the _/usr/local/niluje/usbnet/etc/dot.ssh/id_rsa.pub_ file to a Linux machine, and use the command below to add it to the 
 _authorized\_keys_ file on the remote server:
 
-```
+```bash
 cat id_rsa.pub | ssh USER@127.0.0.1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 

@@ -1,4 +1,4 @@
-# Profiles
+# Using profiles
 
 ![](img/profiles.png)
 

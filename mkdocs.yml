@@ -1,6 +1,6 @@
 site_name: KOReader compendium
 site_description: KOReader knowledgebase
-site_url: https://tokyoma.de/koreader-compendium/
+site_url: https://dmpop.github.io/koreader-compendium/
 site_author: Dmitri Popov
 repo_url: https://github.com/dmpop/koreader-compendium/
 edit_uri: blob/main/docs/
@@ -8,8 +8,13 @@ copyright: Creative Commons CC0
 theme:
   name: material
   font:
-    text: Barlow
+    text: Lato
 markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
   - admonition
   - pymdownx.details
   - pymdownx.superfences

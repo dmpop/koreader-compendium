@@ -6,7 +6,7 @@ First step is to configure Joplin. Launch the application, choose **Tools -> Opt
 
 Connect your ereader to the machine, enable **Start USB storage** in KOReader, and open the _koreader/settings.reader.lua_ file for editing. Locate the `["exporter"]` section and add the following entries to it (replace _127.0.0.1_ with the actual IP address of the machine running Joplin, and replace _authorization_token_ with the copied token):
 
-```
+```yaml
 ["joplin_IP"] = "127.0.0.1",
 ["joplin_token"] = "authorization_token",
 ["joplin_port"] = 41185,

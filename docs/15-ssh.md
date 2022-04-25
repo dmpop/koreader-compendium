@@ -6,7 +6,7 @@ In KOReader, open the top bar, switch to **Settings -> Network -> SSH Server**, 
 
 Once the SSH server is running, KOReader displays a dialog with connection information. Note the IP address of the ereader. Using a machine on the same network, establish an SSH connection to the ereader using the following command (replace _127.0.0.1_ with the actual IP address of the ereader):
 
-```
+```bash
 ssh -p 2222 root@127.0.0.1
 ```
 
