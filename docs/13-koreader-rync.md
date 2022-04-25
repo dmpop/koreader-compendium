@@ -51,6 +51,9 @@ rsync -avhz --delete --no-g --no-o -P -e "ssh -p 22" USER@127.0.0.1:/path/to/lib
 rsync -avhz --delete --no-g --no-o -P -e "ssh -p 22" USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
 ```
 
+!!! bug "Sync workaround"
+    Running the described rsync-based shell script to download KOReader data doesn't affect the currently opened book. A simple workaround is to open a book that you are not reading and then run the script. I usually open the _KOreader Quickstart Guide_ book, and then run the script.
+
 ## Configure passwordless SSH access
 
 Every time you run the scripts described above, you'd be prompted to enter the password twice, which can quickly become a nuisance. To fix this, generate an SSH key pair in KOReader, and add the public key to the list of authorized keys on the remote machine.

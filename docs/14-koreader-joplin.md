@@ -23,4 +23,4 @@ socat tcp-listen:41185,reuseaddr,fork tcp:localhost:41184
 
 In KOReader, open the top bar, choose **Tools -> Export highlights**, make sure the **Joplin** option is enabled, and tap either **Export all notes in this book** or **Export all notes in your library**.
 
-Source: https://www.mobileread.com/forums/showthread.php?t=338169
+Source: <https://www.mobileread.com/forums/showthread.php?t=338169>

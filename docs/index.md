@@ -8,3 +8,7 @@ Support for a wide range of e-book formats, custom fonts and styling, profiles, 
     - Kobo Libra 2 with the latest stable version of KOReader
     - Kobo Glo HD with the latest development version of KOReader
     - Linux Mint 21 with the latest version of Calibre
+
+## From Draft to EPUB book
+
+<a href="https://dmpop.gumroad.com/l/from-draft-to-epub"><img style="height: 400px; border-radius: 9px;" src="https://tokyoma.de/bookcovers/from-draft-to-epub.jpg"></a>
