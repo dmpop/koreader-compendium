@@ -7,6 +7,19 @@ edit_uri: blob/main/docs/
 copyright: Creative Commons CC0
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/lightbulb-outline 
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
   font:
     text: Lato
 markdown_extensions:
