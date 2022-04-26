@@ -12,14 +12,14 @@
         <meta name="author" content="Dmitri Popov">
       
       
-        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/13-koreader-rync/">
+        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/07-customize-status-bar/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
     
     
       
-        <title>Back up KOReader book metadata with rsync - KOReader compendium</title>
+        <title>Customize the status bar - KOReader compendium</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#back-up-koreader-book-metadata-with-rsync" class="md-skip">
+        <a href="#customize-the-status-bar" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Back up KOReader book metadata with rsync
+              Customize the status bar
             
           </span>
         </div>
@@ -311,9 +311,34 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Customize the status bar
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
-      <a href="../07-open-last-viewed-book/" class="md-nav__link">
+      <a href="../08-open-last-viewed-book/" class="md-nav__link">
         Open with the last viewed book
       </a>
     </li>
@@ -328,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-profiles/" class="md-nav__link">
+      <a href="../09-profiles/" class="md-nav__link">
         Using profiles
       </a>
     </li>
@@ -343,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-export-highlights/" class="md-nav__link">
+      <a href="../10-export-highlights/" class="md-nav__link">
         Export highlights
       </a>
     </li>
@@ -358,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-json-to-markdown/" class="md-nav__link">
+      <a href="../11-json-to-markdown/" class="md-nav__link">
         Convert notes from JSON to Markdown
       </a>
     </li>
@@ -373,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-calibre-connect/" class="md-nav__link">
+      <a href="../12-calibre-connect/" class="md-nav__link">
         Send books wirelessly from Calibre
       </a>
     </li>
@@ -388,65 +413,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-opds/" class="md-nav__link">
+      <a href="../13-opds/" class="md-nav__link">
         Access Calibre library via OPDS
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Back up KOReader book metadata with rsync
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Back up KOReader book metadata with rsync
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configure-passwordless-ssh-access" class="md-nav__link">
-    Configure passwordless SSH access
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -474,7 +443,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../15-ssh/" class="md-nav__link">
+      <a href="../15-koreader-rsync/" class="md-nav__link">
+        Back up KOReader book metadata with rsync
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-ssh/" class="md-nav__link">
         Connect to the ereader via SSH
       </a>
     </li>
@@ -489,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../16-resources/" class="md-nav__link">
+      <a href="../17-resources/" class="md-nav__link">
         Useful Kobo and KOReader resources
       </a>
     </li>
@@ -516,21 +500,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configure-passwordless-ssh-access" class="md-nav__link">
-    Configure passwordless SSH access
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -541,55 +510,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/13-koreader-rync.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/07-customize-status-bar.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="back-up-koreader-book-metadata-with-rsync">Back up KOReader book metadata with rsync</h1>
-<p>For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your ereader. For example, I have the <em>Library</em> directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Library
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  English
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Italiano
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Dansk
-</code></pre></div>
-<p>This way, I can back up everything by syncing the <em>Library</em> directory and its entire contents using rsync. There are two ways to do that.</p>
-<p>The simplest approach is to connect the ereader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in <em>/media/$USER/KOBOeReader</em>. Then it's a matter of running the appropriate rsync command. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync -avh --delete /media/<span class="nv">$USER</span>/KOBOeReader/Library/ /path/to/backup/dir
-</code></pre></div>
-<p>Instead of backing up the data to the local machine, you can push the data to a remote Linux machine via SSH:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /media/<span class="nv">$USER</span>/KOBOreader/Library/ user@127.0.0.1:/path/to/backup/dir
-</code></pre></div>
-<p>That's all fine and dandy, but you need a machine with rsync for this approach to work.</p>
-<p>A slightly more technical but versatile approach is to install rsync on your reader, so you can run backup operations directly on the device itself. To install rsync on a Kobo device, download and install <a href="https://www.mobileread.com/forums/showthread.php?t=254214">Kobo Stuff</a>. Launch KOReader, open the top bar, switch to <strong>Tools -&gt; More tools -&gt; Terminal emulator</strong>, and tap <strong>Open terminal session</strong>. Run the rsync command that syncs the content of the <em>Library</em> directory to a Linux machine. Here's the command I use to back up the data to a Linux server running on my local network:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/Library/ user@127.0.0.1:/path/to/library
-</code></pre></div>
-<p>Instead of laboriously entering long rsync commands using the built-in keyboard, you can speed up the process by adding the desired commands to the <em>koreader/.ash_history</em> file. Alternatively, you can write a shell script to automate the task. Create a text file named <em>up.sh</em> in the <em>koreader/scripts/</em> and add the following code (adjust the examples as needed):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/sh</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/Library/ USER@127.0.0.1:/path/to/library
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/.adds/koreader/clipboard/ USER@127.0.0.1:/path/to/export
-</code></pre></div>
-<p>Save the file and make it executable using the <code>chmod +x /koreader/scripts/up.sh</code> command.</p>
-<p>To launch the script in the ereader, open the terminal emulator and run the <code>/path/to/koreader/scripts/up.sh</code> command.</p>
-<p>If you happen to use a second ereader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
-</code></pre></div>
-<div class="admonition bug">
-<p class="admonition-title">Sync workaround</p>
-<p>Running the described rsync-based shell script to download KOReader data doesn't affect the currently opened book. A simple workaround is to open a book that you are not reading and then run the script. I usually open the <em>KOreader Quickstart Guide</em> book, and then run the script.</p>
-</div>
-<h2 id="configure-passwordless-ssh-access">Configure passwordless SSH access</h2>
-<p>Every time you run the scripts described above, you'd be prompted to enter the password twice, which can quickly become a nuisance. To fix this, generate an SSH key pair in KOReader, and add the public key to the list of authorized keys on the remote machine.</p>
-<p><img alt="" src="../img/terminal.png" /></p>
-<p>To generate an SSH key pair, launch the terminal emulator in KOReader and run the <code>ssh-keygen</code> command. Follow the prompts, but skip specifying a passphrase. Run the <code>cat .ssh/*.pub</code> command and copy the key. This generates a key pair in the <em>/usr/local/niluje/usbnet/etc/dot.ssh/</em> directory. To make sure that the keys are there, run the <code>ssh-agent sh -c 'ssh-add; ssh-add -L'</code> command.</p>
-<p>Copy the <em>/usr/local/niluje/usbnet/etc/dot.ssh/id_rsa.pub</em> file to a Linux machine, and use the command below to add it to the 
-<em>authorized_keys</em> file on the remote server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat id_rsa.pub <span class="p">|</span> ssh USER@127.0.0.1 <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
-</code></pre></div>
-<p>From now on you can run the shell scripts (or any comands and actions that require an SSH connection to the remote machine) without password.</p>
+<h1 id="customize-the-status-bar">Customize the status bar</h1>
+<p>By default, you can cycle through the available views by tapping on the status var. But you can also squeeze all the information you find useful into a single view. </p>
+<p><img alt="" src="../img/status-bar.png" /></p>
+<p>To do this, open the top bar, choose <strong>Settings -&gt; Status Bar -&gt; Settings</strong>, and enable the <strong>Show all at once</strong> option. Return to the <strong>Settings -&gt; Status Bar</strong> menu and toggle the desired options.</p>
 
               
             </article>
@@ -603,7 +533,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../12-opds/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Access Calibre library via OPDS" rel="prev">
+        <a href="../06-auto-show-bottom-menu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Disable auto-show bottom menu" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -612,20 +542,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Access Calibre library via OPDS
+              Disable auto-show bottom menu
             </div>
           </div>
         </a>
       
       
         
-        <a href="../14-koreader-joplin/" class="md-footer__link md-footer__link--next" aria-label="Next: KOReader with Joplin" rel="next">
+        <a href="../08-open-last-viewed-book/" class="md-footer__link md-footer__link--next" aria-label="Next: Open with the last viewed book" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              KOReader with Joplin
+              Open with the last viewed book
             </div>
           </div>
           <div class="md-footer__button md-icon">

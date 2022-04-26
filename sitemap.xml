@@ -36,37 +36,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/07-open-last-viewed-book/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/07-customize-status-bar/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/08-profiles/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/08-open-last-viewed-book/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/09-export-highlights/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/09-profiles/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/10-json-to-markdown/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/10-export-highlights/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/11-calibre-connect/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/11-json-to-markdown/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/12-opds/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/12-calibre-connect/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/13-koreader-rync/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/13-opds/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -76,12 +76,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/15-ssh/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/15-koreader-rsync/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmpop.github.io/koreader-compendium/16-resources/</loc>
+         <loc>https://dmpop.github.io/koreader-compendium/16-ssh/</loc>
+         <lastmod>2022-04-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmpop.github.io/koreader-compendium/17-resources/</loc>
          <lastmod>2022-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
