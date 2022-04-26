@@ -52,7 +52,7 @@ rsync -avhz --delete --no-g --no-o -P -e "ssh -p 22" USER@127.0.0.1:/path/to/cli
 ```
 
 !!! bug "Sync workaround"
-    Running the described rsync-based shell script to download KOReader data doesn't affect the currently opened book. A simple workaround is to open a book that you are not reading and then run the script. I usually open the _KOreader Quickstart Guide_ book, and then run the script.
+    Running the described rsync-based shell script to download KOReader data doesn't affect the currently opened book. A simple workaround is to open a book that you are not reading and then run the script. I usually open the _KOReader Quickstart Guide_ book, and then run the script.
 
 ## Configure passwordless SSH access
 
@@ -62,7 +62,7 @@ Every time you run the scripts described above, you'd be prompted to enter the p
 
 To generate an SSH key pair, launch the terminal emulator in KOReader and run the `ssh-keygen` command. Follow the prompts, but skip specifying a passphrase. Run the `cat .ssh/*.pub` command and copy the key. This generates a key pair in the _/usr/local/niluje/usbnet/etc/dot.ssh/_ directory. To make sure that the keys are there, run the `ssh-agent sh -c 'ssh-add; ssh-add -L'` command.
 
-Copy the _/usr/local/niluje/usbnet/etc/dot.ssh/id_rsa.pub_ file to a Linux machine, and use the command below to add it to the 
+Copy the _/usr/local/niluje/usbnet/etc/dot.ssh/id\_rsa.pub_ file to a Linux machine, and use the command below to add it to the 
 _authorized\_keys_ file on the remote server:
 
 ```bash
