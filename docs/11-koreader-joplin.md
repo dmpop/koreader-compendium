@@ -1,4 +1,4 @@
-# KOReader with Joplin
+# Export highlights to Joplin
 
 In addition to exporting highlights as HTML, JSON, and plain text files, KOReader can also push notes from the ereader directly to the [Joplin](https://joplinapp.org) note-taking application. The initial setup process requires some work, but once it's done, pushing notes to Joplin is easy.
 
