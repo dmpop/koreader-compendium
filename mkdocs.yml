@@ -8,6 +8,7 @@ copyright: Creative Commons CC0
 theme:
   name: material
   logo: logo.png
+  favicon: logo.png
   palette:
     - scheme: default
       primary: green
