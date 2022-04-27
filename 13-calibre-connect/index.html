@@ -12,14 +12,14 @@
         <meta name="author" content="Dmitri Popov">
       
       
-        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/14-koreader-joplin/">
+        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/13-calibre-connect/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
     
     
       
-        <title>KOReader with Joplin - KOReader compendium</title>
+        <title>Send books wirelessly from Calibre - KOReader compendium</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#koreader-with-joplin" class="md-skip">
+        <a href="#send-books-wirelessly-from-calibre" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              KOReader with Joplin
+              Send books wirelessly from Calibre
             
           </span>
         </div>
@@ -397,38 +397,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-json-to-markdown/" class="md-nav__link">
+      <a href="../11-koreader-joplin/" class="md-nav__link">
+        Export highlights to Joplin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-json-to-markdown/" class="md-nav__link">
         Convert notes from JSON to Markdown
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-calibre-connect/" class="md-nav__link">
-        Send books wirelessly from Calibre
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../13-opds/" class="md-nav__link">
-        Access Calibre library via OPDS
       </a>
     </li>
   
@@ -452,9 +437,24 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        KOReader with Joplin
+        Send books wirelessly from Calibre
       </a>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-opds/" class="md-nav__link">
+        Access Calibre library via OPDS
+      </a>
     </li>
   
 
@@ -534,27 +534,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/14-koreader-joplin.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/13-calibre-connect.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="koreader-with-joplin">KOReader with Joplin</h1>
-<p>In addition to exporting highlights as HTML, JSON, and plain text files, KOReader can also push notes from the ereader directly to the <a href="https://joplinapp.org">Joplin</a> note-taking application. The initial setup process requires some work, but once it's done, pushing notes to Joplin is easy.</p>
-<p>First step is to configure Joplin. Launch the application, choose <strong>Tools -&gt; Options</strong>, and switch to the <strong>Web clipper</strong> section. Press <strong>Enable Web Clipper Service</strong> and copy the automatically generated authorization token. Leave Joplin running. If you use Joplin on a Linux machine, install the <em>socat</em> package. To do this on Ubuntu and Linux Mint, run the <code>sudo apt install socat</code> command.</p>
-<p>Connect your ereader to the machine, enable <strong>Start USB storage</strong> in KOReader, and open the <em>koreader/settings.reader.lua</em> file for editing. Locate the <code>["exporter"]</code> section and add the following entries to it (replace <em>127.0.0.1</em> with the actual IP address of the machine running Joplin, and replace <em>authorization_token</em> with the copied token):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">[</span><span class="s">&quot;joplin_IP&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">= &quot;127.0.0.1&quot;,</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">[&quot;joplin_token&quot;] = &quot;authorization_token&quot;,</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">[&quot;joplin_port&quot;] = 41185,</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">[&quot;joplin_export&quot;] = true,</span><span class="w"></span>
-</code></pre></div>
-<p>Save the changes and safely disconnect the ereader. On the machine running Joplin, open the terminal, and run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>socat tcp-listen:41185,reuseaddr,fork tcp:localhost:41184
-</code></pre></div>
-<p><img alt="" src="../img/joplin.png" /></p>
-<p>In KOReader, open the top bar, choose <strong>Tools -&gt; Export highlights</strong>, make sure the <strong>Joplin</strong> option is enabled, and tap either <strong>Export all notes in this book</strong> or <strong>Export all notes in your library</strong>.</p>
-<p>Source: <a href="https://www.mobileread.com/forums/showthread.php?t=338169">https://www.mobileread.com/forums/showthread.php?t=338169</a></p>
+<h1 id="send-books-wirelessly-from-calibre">Send books wirelessly from Calibre</h1>
+<p><img alt="" src="../img/calibre-connect.png" /></p>
+<p>If you happen to use Calibre to manage books on a regular machine, you can access its library from the ereader through Wi-Fi.</p>
+<ol>
+<li>In Calibre, choose <strong>Connect/Share -&gt; Start wireless device connection</strong>.</li>
+<li>In KOReader, open the top bar and switch to <strong>Tools -&gt; Calibre</strong>.</li>
+<li>Choose <strong>Wireless settings -&gt; Enable wireless client</strong>.</li>
+<li>Return to the <strong>Tools -&gt; Calibre</strong> section, tap <strong>Connect</strong>, then long-tap on the desired folder to set it as the destination directory for files sent from Calibre.</li>
+<li>Calibre displays a notification when it detects the ereader, and you can then use the <strong>Send to device</strong> button or context menu to push the desired books to the ereader.</li>
+</ol>
 
               
             </article>
@@ -568,7 +563,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../13-opds/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Access Calibre library via OPDS" rel="prev">
+        <a href="../12-json-to-markdown/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Convert notes from JSON to Markdown" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -577,20 +572,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Access Calibre library via OPDS
+              Convert notes from JSON to Markdown
             </div>
           </div>
         </a>
       
       
         
-        <a href="../15-koreader-rsync/" class="md-footer__link md-footer__link--next" aria-label="Next: Back up KOReader book metadata with rsync" rel="next">
+        <a href="../14-opds/" class="md-footer__link md-footer__link--next" aria-label="Next: Access Calibre library via OPDS" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Back up KOReader book metadata with rsync
+              Access Calibre library via OPDS
             </div>
           </div>
           <div class="md-footer__button md-icon">

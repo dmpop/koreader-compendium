@@ -12,14 +12,14 @@
         <meta name="author" content="Dmitri Popov">
       
       
-        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/13-opds/">
+        <link rel="canonical" href="https://dmpop.github.io/koreader-compendium/12-json-to-markdown/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
     
     
       
-        <title>Access Calibre library via OPDS - KOReader compendium</title>
+        <title>Convert notes from JSON to Markdown - KOReader compendium</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#access-calibre-library-via-opds" class="md-skip">
+        <a href="#convert-notes-from-json-to-markdown" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Access Calibre library via OPDS
+              Convert notes from JSON to Markdown
             
           </span>
         </div>
@@ -397,23 +397,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-json-to-markdown/" class="md-nav__link">
-        Convert notes from JSON to Markdown
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-calibre-connect/" class="md-nav__link">
-        Send books wirelessly from Calibre
+      <a href="../11-koreader-joplin/" class="md-nav__link">
+        Export highlights to Joplin
       </a>
     </li>
   
@@ -437,7 +422,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Access Calibre library via OPDS
+        Convert notes from JSON to Markdown
       </a>
       
     </li>
@@ -452,8 +437,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../14-koreader-joplin/" class="md-nav__link">
-        KOReader with Joplin
+      <a href="../13-calibre-connect/" class="md-nav__link">
+        Send books wirelessly from Calibre
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-opds/" class="md-nav__link">
+        Access Calibre library via OPDS
       </a>
     </li>
   
@@ -534,19 +534,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/13-opds.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/dmpop/koreader-compendium/blob/main/docs/12-json-to-markdown.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="access-calibre-library-via-opds">Access Calibre library via OPDS</h1>
-<p><img alt="" src="../img/opds.png" /></p>
-<p>Calibre can share the entire library in the OPDS format, which makes it possible to browse and download books using KOReader.</p>
-<ol>
-<li>In Calibre, choose <strong>Connect/Share -&gt; Start content server</strong> to enable the OPDS catalog.</li>
-<li>In KOReader, open the top bar and launch the file browser. Tap the top bar in the file browser, and choose <strong>Lookup -&gt; OPDS catalog -&gt; Local calibre library</strong>. You can then browse and download books from the Calibre library.</li>
-</ol>
+<h1 id="convert-notes-from-json-to-markdown">Convert notes from JSON to Markdown</h1>
+<p>KOReader allows you to export notes in the HTML and JSON formats. But if you prefer to have your highlights in the Markdown format, the <a href="https://kotomd.utsob.me">KOReader to Markdown</a> got you covered. Upload the exported JSON file, and get the Markdown-formatted text in return. If you prefer to host the tool on your own Linux server or local machine, deploying it is relatively straightforward. On Ubuntu and Linux Mint, this can be done using the following commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt install yarn
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git clone https://gitlab.com/uroybd/koreader-to-markdown.git
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span> koreader-to-markdown
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>yarn
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>yarn serve
+</code></pre></div>
 
               
             </article>
@@ -560,7 +561,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../12-calibre-connect/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Send books wirelessly from Calibre" rel="prev">
+        <a href="../11-koreader-joplin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Export highlights to Joplin" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -569,20 +570,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Send books wirelessly from Calibre
+              Export highlights to Joplin
             </div>
           </div>
         </a>
       
       
         
-        <a href="../14-koreader-joplin/" class="md-footer__link md-footer__link--next" aria-label="Next: KOReader with Joplin" rel="next">
+        <a href="../13-calibre-connect/" class="md-footer__link md-footer__link--next" aria-label="Next: Send books wirelessly from Calibre" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              KOReader with Joplin
+              Send books wirelessly from Calibre
             </div>
           </div>
           <div class="md-footer__button md-icon">
