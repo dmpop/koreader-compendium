@@ -4,7 +4,7 @@ site_url: https://dmpop.github.io/koreader-compendium/
 site_author: Dmitri Popov
 repo_url: https://github.com/dmpop/koreader-compendium/
 edit_uri: blob/main/docs/
-copyright: Creative Commons CC0
+copyright: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 theme:
   name: material
   logo: logo.png

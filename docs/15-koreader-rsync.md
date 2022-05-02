@@ -69,4 +69,14 @@ _authorized\_keys_ file on the remote server:
 cat id_rsa.pub | ssh USER@127.0.0.1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 
-From now on you can run the shell scripts (or any comands and actions that require an SSH connection to the remote machine) without password.
+From now on you can run the shell scripts (or any commands and actions that require an SSH connection to the remote machine) without password.
+
+## Launch scripts via NickelMenu (Kobo)
+
+Installing KOReader on a Kobo device adds the NickelMenu launcher to the bottom toolbar. By default, the launcher contains only the **KOReader** entry. But you can also define menu entries that you can use to run the custom scripts. For example, you can create a launch entry that executes the _up.sh_ script described above. To do this, create a file called _up_ in the _.adds/nm_ directory, open the file for editing, and add the following menu definition:
+
+```
+menu_item : main : Sync up : cmd_spawn : quiet : exec /mnt/onboard/.adds/koreader/scripts/up.sh
+```
+
+Save the changes, and you should see the new **Sync up** entry in the NickelMenu launcher. 
