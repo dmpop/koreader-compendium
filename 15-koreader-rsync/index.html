@@ -644,10 +644,10 @@
 </code></pre></div>
 <p>From now on you can run the shell scripts (or any commands and actions that require an SSH connection to the remote machine) without password.</p>
 <h2 id="launch-scripts-via-nickelmenu-kobo">Launch scripts via NickelMenu (Kobo)</h2>
-<p>Installing KOReader on a Kobo device adds the NickelMenu launcher to the bottom toolbar. By default, the launcher contains only the <em>KOReader</em> entry. But you can also define menu entries that you can use to run the custom scripts. For example, you can create a launch entry that executes the <em>up.sh</em> script described above. To do this, create a file called <em>up</em> in the <em>.adds/nm</em> directory, open the file for editing, and add the following menu definition:</p>
+<p>Installing KOReader on a Kobo device adds the NickelMenu launcher to the bottom toolbar. By default, the launcher contains only the <strong>KOReader</strong> entry. But you can also define menu entries that you can use to run the custom scripts. For example, you can create a launch entry that executes the <em>up.sh</em> script described above. To do this, create a file called <em>up</em> in the <em>.adds/nm</em> directory, open the file for editing, and add the following menu definition:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>menu_item : main : Sync up : cmd_spawn : quiet : exec /mnt/onboard/.adds/koreader/scripts/up.sh
 </code></pre></div>
-<p>Save the changes, and you should see the new <em>Sync up</em> entry in the NickelMenu launcher. </p>
+<p>Save the changes, and you should see the new <strong>Sync up</strong> entry in the NickelMenu launcher. </p>
 
               
             </article>
