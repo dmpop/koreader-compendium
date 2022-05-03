@@ -1,6 +1,6 @@
 # Back up KOReader book metadata with rsync
 
-For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your ereader. For example, I have the _Library_ directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:
+For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your e-reader. For example, I have the _Library_ directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:
 
 ```
 Library
@@ -11,7 +11,7 @@ Library
 
 This way, I can back up everything by syncing the _Library_ directory and its entire contents using rsync. There are two ways to do that.
 
-The simplest approach is to connect the ereader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in _/media/$USER/KOBOeReader_. Then it's a matter of running the appropriate rsync command. For example:
+The simplest approach is to connect the e-reader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in _/media/$USER/KOBOeReader_. Then it's a matter of running the appropriate rsync command. For example:
 
 ```bash
 rsync -avh --delete /media/$USER/KOBOeReader/Library/ /path/to/backup/dir
@@ -41,9 +41,9 @@ rsync -avhz --delete -P -e "ssh -p 22" /mnt/onboard/.adds/koreader/clipboard/ US
 
 Save the file and make it executable using the `chmod +x /koreader/scripts/up.sh` command.
 
-To launch the script in the ereader, open the terminal emulator and run the `/path/to/koreader/scripts/up.sh` command.
+To launch the script in the e-reader, open the terminal emulator and run the `/path/to/koreader/scripts/up.sh` command.
 
-If you happen to use a second ereader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:
+If you happen to use a second e-reader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:
 
 ```bash
 #!/bin/sh
