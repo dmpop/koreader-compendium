@@ -17,7 +17,7 @@ The simplest approach is to connect the e-reader on a machine that has rsync. I 
 rsync -avh --delete /media/$USER/KOBOeReader/Library/ /path/to/backup/dir
 ```
 
-Instead of backing up the data to the local machine, you can push the data to a remote Linux machine via SSH:
+Instead of backing up the data to the local machine, you can push the data to a remote Linux host via SSH:
 
 ```bash
 rsync -avhz --delete -P -e "ssh -p 22" /media/$USER/KOBOreader/Library/ user@127.0.0.1:/path/to/backup/dir
@@ -25,7 +25,7 @@ rsync -avhz --delete -P -e "ssh -p 22" /media/$USER/KOBOreader/Library/ user@127
 
 That's all fine and dandy, but you need a machine with rsync for this approach to work.
 
-A slightly more technical but versatile approach is to install rsync on your reader, so you can run backup operations directly on the device itself. To install rsync on a Kobo device, download and install [Kobo Stuff](https://www.mobileread.com/forums/showthread.php?t=254214). Launch KOReader, open the top bar, switch to **Tools -> More tools -> Terminal emulator**, and tap **Open terminal session**. Run the rsync command that syncs the content of the _Library_ directory to a Linux machine. Here's the command I use to back up the data to a Linux server running on my local network:
+A slightly more technical but versatile approach is to install rsync on your reader, so you can run backup operations directly on the device itself. To install rsync on a Kobo device, download and install [Kobo Stuff](https://www.mobileread.com/forums/showthread.php?t=254214). Launch KOReader, open the top bar, switch to **Tools -> More tools -> Terminal emulator**, and tap **Open terminal session**. Run the rsync command that syncs the content of the _Library_ directory to a Linux machine. Here's the command you can use to back up the data to a Linux server running on a local network:
 
 ```bash
 rsync -avhz --delete -P -e "ssh -p 22" /mnt/onboard/Library/ user@127.0.0.1:/path/to/library
