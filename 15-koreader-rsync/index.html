@@ -521,7 +521,7 @@
   
     <li class="md-nav__item">
       <a href="../16-ssh/" class="md-nav__link">
-        Connect to the ereader via SSH
+        Connect to the e-reader via SSH
       </a>
     </li>
   
@@ -601,14 +601,14 @@
 
 
 <h1 id="back-up-koreader-book-metadata-with-rsync">Back up KOReader book metadata with rsync</h1>
-<p>For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your ereader. For example, I have the <em>Library</em> directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:</p>
+<p>For each book, KOReader creates a metadata file that contains book settings, notes, current position, etc. And while you can sync the current position and export notes, it also makes sense to keep a backup of all the important data. To make it easier to manage both the content and metadata, use a dedicated directory on your e-reader. For example, I have the <em>Library</em> directory on my Kobo device. All books are stored there, grouped in subdirectories by language, as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Library
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  English
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Italiano
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Dansk
 </code></pre></div>
 <p>This way, I can back up everything by syncing the <em>Library</em> directory and its entire contents using rsync. There are two ways to do that.</p>
-<p>The simplest approach is to connect the ereader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in <em>/media/$USER/KOBOeReader</em>. Then it's a matter of running the appropriate rsync command. For example:</p>
+<p>The simplest approach is to connect the e-reader on a machine that has rsync. I use Linux Mint, so as soon as I plug my Kobo, the system automatically mounts it in <em>/media/$USER/KOBOeReader</em>. Then it's a matter of running the appropriate rsync command. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync -avh --delete /media/<span class="nv">$USER</span>/KOBOeReader/Library/ /path/to/backup/dir
 </code></pre></div>
 <p>Instead of backing up the data to the local machine, you can push the data to a remote Linux machine via SSH:</p>
@@ -624,8 +624,8 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>rsync -avhz --delete -P -e <span class="s2">&quot;ssh -p 22&quot;</span> /mnt/onboard/.adds/koreader/clipboard/ USER@127.0.0.1:/path/to/export
 </code></pre></div>
 <p>Save the file and make it executable using the <code>chmod +x /koreader/scripts/up.sh</code> command.</p>
-<p>To launch the script in the ereader, open the terminal emulator and run the <code>/path/to/koreader/scripts/up.sh</code> command.</p>
-<p>If you happen to use a second ereader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:</p>
+<p>To launch the script in the e-reader, open the terminal emulator and run the <code>/path/to/koreader/scripts/up.sh</code> command.</p>
+<p>If you happen to use a second e-reader, and you want to download the saved settings and data, all you have to do is to create a shell script that runs the following commands:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/library/ /mnt/onboard/Library
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>rsync -avhz --delete --no-g --no-o -P -e <span class="s2">&quot;ssh -p 22&quot;</span> USER@127.0.0.1:/path/to/clipboard/ /mnt/onboard/.adds/koreader/clipboard
@@ -677,13 +677,13 @@
       
       
         
-        <a href="../16-ssh/" class="md-footer__link md-footer__link--next" aria-label="Next: Connect to the ereader via SSH" rel="next">
+        <a href="../16-ssh/" class="md-footer__link md-footer__link--next" aria-label="Next: Connect to the e-reader via SSH" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Connect to the ereader via SSH
+              Connect to the e-reader via SSH
             </div>
           </div>
           <div class="md-footer__button md-icon">
