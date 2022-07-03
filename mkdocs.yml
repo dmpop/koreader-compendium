@@ -5,6 +5,11 @@ site_author: Dmitri Popov
 repo_url: https://github.com/dmpop/koreader-compendium/
 edit_uri: blob/main/docs/
 copyright: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
 theme:
   name: material
   logo: logo.png
@@ -14,7 +19,7 @@ theme:
       primary: green
       accent: teal
       toggle:
-        icon: material/lightbulb-outline 
+        icon: material/lightbulb-outline
         name: Switch to dark mode
     - scheme: slate
       primary: green
@@ -24,14 +29,12 @@ theme:
         name: Switch to light mode
   font:
     text: Lato
+    code: JetBrains Mono
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.keys
   - admonition
   - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
   - pymdownx.superfences
-plugins:
-  - search
+  - pymdownx.inlinehilite
+  - pymdownx.keys
