@@ -590,13 +590,29 @@
 <p>In KOReader, open the top bar, switch to <strong>Settings -&gt; Network -&gt; SSH Server</strong>, enable the <strong>Login without password</strong> option, and start the SSH server.</p>
 <p><img alt="" src="../img/ssh-server.png" /></p>
 <p>Once the SSH server is running, KOReader displays a dialog with connection information. Note the IP address of the e-reader. Using a machine on the same network, establish an SSH connection to the e-reader using the following command (replace <em>127.0.0.1</em> with the actual IP address of the e-reader):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh -p <span class="m">2222</span> root@127.0.0.1
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -p <span class="m">2222</span> root@127.0.0.1
 </code></pre></div>
+</td></tr></table>
 <p>Using this feature, you can quickly push books to the e-reader wirelessly and without using any additional tools or applications. On most Linux distributions the default file browser can handle the SSH and SFTP protocols. So you can access the e-reader's storage by specifying its address in the location bar of the file browser. For example, <em>ssh://root@127.0.0.1:2222</em>.</p>
 <h2 id="add-an-authorized-ssh-key">Add an authorized SSH key</h2>
 <p>The easiest way to connect to KOReader via SSH is to enable the <strong>Login without password</strong> option. The easiest approach is also the least secure one, as anyone on the same network can get root access to the e-reader. So it's a good idea to allow SSH access only to authorized devices. To do this, you need to generate an SSH key pair on the device you want to connect from to your e-reader.</p>
 <p>To generate an SSH key pair on a Linux machine, run the <code>ssh-keygen</code> command in the terminal. Follow the prompts, but skip specifying a passphrase. Run the <code>cat .ssh/*.pub</code> command and copy the key.</p>
 <p>Connect the e-reader to the machine and create the <em>authorized_keys</em> file in the <em>koreader/settings/SSH</em> directory. Open the file for editing, paste the copied key in it, and save the changes. From now on, you don't have to enter a password when you connect to the e-reader from the authorized machine.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2022</span>
+      
+    
+  </small>
+</div>
 
               
             </article>
