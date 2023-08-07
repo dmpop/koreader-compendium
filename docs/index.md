@@ -11,4 +11,4 @@ Support for a wide range of e-book formats, custom fonts and styling, profiles, 
 
 ## The author
 
-I write [books](https://dmpop.gumroad.com), and I really like [coffee]('https://www.paypal.com/paypalme/dmpop).
+I write [books](https://dmpop.gumroad.com), and I really like [coffee](https://www.paypal.com/paypalme/dmpop).
